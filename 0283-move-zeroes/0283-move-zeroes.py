@@ -9,25 +9,19 @@ class Solution:
             return
         
         # define pointers
-        index1 = 0
-        index2 = 1
+        left = 0
+        right = 1
         
         # loop
-        while index2 <= n-1:
-            if nums[index1] != 0:
-                index1 += 1
-                index2 += 1
+        while right < n:            
+            if nums[left] != 0:
+                left += 1
+                right += 1
+            elif nums[right] == 0:
+                right += 1
             else:
-                while nums[index2] == 0 and index2 < n-1:
-                    index2 += 1
-                if nums[index2] != 0:
-                    num1 = nums[index1]
-                    num2 = nums[index2]
-                    nums[index1] = num2
-                    nums[index2] = num1
-                    index1 += 1
-                    index2 += 1
-                else:
-                    return
+                temp = nums[left]
+                nums[left] = nums[right]
+                nums[right] = temp
         return
     
