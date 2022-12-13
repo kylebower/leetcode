@@ -1,9 +1,16 @@
 class Solution:
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:       
-        for x in ransomNote:
-            location_x = magazine.find(x)
-            if location_x == -1:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        magazineDictionary = {}
+        for i in range(len(magazine)):
+            c = magazine[i]
+            c_count = magazineDictionary.get(c, 0)
+            magazineDictionary[c] = c_count + 1
+        
+        for i in range(len(ransomNote)):
+            c = ransomNote[i]
+            c_count = magazineDictionary.get(c, 0)
+            if c_count <= 0:
                 return False
-            else:
-                magazine = magazine[:location_x] + magazine[location_x+1:]
+            magazineDictionary[c] = c_count - 1
+            
         return True
