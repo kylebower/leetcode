@@ -30,3 +30,7 @@ class Solution:
         
         # return array
         return sorted_nums
+    
+        # time complexity O(n)
+        # space complexity O(1)
+        
