@@ -22,3 +22,5 @@ class Solution:
             else:
                 R -= 1
         
+        # time complexity: O(NlogN)
+        # space complexity: O(N)
