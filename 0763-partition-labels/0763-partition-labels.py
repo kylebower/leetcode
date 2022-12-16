@@ -29,3 +29,6 @@ class Solution:
         
         # Return a list of integers representing the size of these partitions
         return answer
+    
+    # Time complexity: O(n)
+    # Space complexity: O(1)
