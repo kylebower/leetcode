@@ -1,9 +1,11 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
-        sorted_nums = [None]*n
-        for i in range(n):
-            sorted_nums[i] = nums[i]
+        
+        # create sorted array of nums
+        sorted_nums = []
+        for i, x in enumerate(nums):
+            sorted_nums.append([x, i])
         sorted_nums.sort()
         
         # define pointers
@@ -12,20 +14,11 @@ class Solution:
         
         # iterate to find indices
         while L < R:
-            current_sum = sorted_nums[L] + sorted_nums[R]
+            current_sum = sorted_nums[L][0] + sorted_nums[R][0]
             if current_sum == target:
-                break
+                return [sorted_nums[L][1], sorted_nums[R][1]]
             elif current_sum < target:
                 L += 1
             else:
                 R -= 1
-        
-        left = 0
-        while nums[left] != sorted_nums[L]:
-            left += 1
-        right = 0
-        while nums[right] != sorted_nums[R] or right == left:
-            right += 1
-        # return indices of the two numbers such that they add up to target
-        return [left, right]
         
