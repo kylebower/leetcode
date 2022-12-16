@@ -1,17 +1,16 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
-        print(n)
+        result = []
+        
         # Base case
         if n < 3:
-            return []
+            return result
         
         # sort array
-        print(nums)
         nums.sort()
-        print(nums)
         
-        result = []
+        # iterate to find triplets
         for p0 in range(n-2):
             if p0 != 0 and nums[p0] == nums[p0-1]:
                 continue
@@ -33,4 +32,6 @@ class Solution:
                     p2 -= 1
                 else:
                     p1 += 1
+        
+        # return all the triplets
         return result
