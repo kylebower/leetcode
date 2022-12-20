@@ -5,7 +5,6 @@ class Solution:
         # define dictionary of all rooms visited
         roomsVisited = {}
         
-        canVisitAll = False
         canVisitMoreRooms = True
         
         # iterate to visit all rooms that we can
@@ -24,13 +23,12 @@ class Solution:
                     keysFound.update({str(y):y})
             
             # check whether we can visit any more rooms
-            nkeysFound = len(list(keysFound.values()))
+            nKeysFound = len(list(keysFound.values()))
             nRoomsVisited = len(list(roomsVisited.values()))
-            canVisitMoreRooms = nkeysFound > nRoomsVisited
+            canVisitMoreRooms = nKeysFound > nRoomsVisited
         
         # determine whether we can visit all the rooms
         nRooms = len(rooms)
-        nRoomsVisited = len(list(roomsVisited.values()))
         canVisitAll = nRoomsVisited == nRooms
         
         # return true if you can visit all the rooms, or false otherwise
