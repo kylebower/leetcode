@@ -13,3 +13,6 @@ class Solution:
             
         # return final value of X
         return X
+    
+    # time complexity: O(n)
+    # space complexity: O(1)
