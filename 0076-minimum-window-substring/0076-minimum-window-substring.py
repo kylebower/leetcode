@@ -17,9 +17,11 @@ class Solution:
         L = 0
         R = 0
         
+        # define dict of char in window that are also in t
         window_dict = {}
         for x in t:
             window_dict.update({x:0})
+            
         # iterate sliding window to find minimum window substring
         while R < m:
             # add s[R] to window_dict if s[R] is in t
@@ -28,16 +30,8 @@ class Solution:
             
             # while a valid window update result
             # then shrink window and update window_dict
-            # while L <= R and list(window_dict.values()) >= list(t_dict.values()):
             valid_window = numpy.less_equal(list(t_dict.values()),list(window_dict.values())).all()
-            # print(valid_dict.all())
-            # print(numpy.less(list(t_dict.values()),list(window_dict.values())))
-            # while L <= R and (list(window_dict.values())>=list(t_dict.values())):
             while L <= R and valid_window:
-                # print((list(window_dict.values())>=list(t_dict.values())))
-                # print("L: " + str(L) + ", R: " + str(R))
-                # print(list(window_dict.values()))
-                # print(list(t_dict.values()))
                 if len(result) > R - L + 1 or len(result) == 0:
                     result = s[L:R+1]
                 if t_dict.get(s[L],0) > 0:
