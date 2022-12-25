@@ -20,9 +20,9 @@ class Solution:
             L = 0
             R = 0
             counter = 0
+            
+            # iterate sliding window
             while R < n:
-                print(R)
-                print(L)
                 if s[R] != j:
                     counter += 1
                 while counter > k:
