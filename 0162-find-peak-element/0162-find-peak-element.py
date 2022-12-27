@@ -3,13 +3,12 @@ class Solution:
         
         # base case
         n = len(nums)
-        if n == 1:
+        if n < 2:
             return 0
         
         # define pointers
         L = 0
         R = n-1
-        mid = 0
         
         # perform binary search
         while L < R:
@@ -23,3 +22,6 @@ class Solution:
         
         # return the index to any of the peaks
         return L
+    
+    # time complexity: O(log n)
+    # space complexity: O(1)
