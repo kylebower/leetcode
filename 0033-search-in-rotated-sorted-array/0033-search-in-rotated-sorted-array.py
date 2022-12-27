@@ -1,35 +1,16 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
-        # base case
         n = len(nums)
-        # if n == 1:
-        #     if nums[0] == target:
-        #         result = 0
-        #     else:
-        #         result = -1
-        #     return result
         
         # define pointers
         L, R = 0, n-1
         
-        # perform binary search
-#         if nums[L] > target and nums[R] < target:
-#             return -1
-        
-#         if nums[L] == target:
-#             return L
-#         elif nums[R] == target:
-#             return R
-            
+        # perform binary search to find index of target
         while L <= R:
-            mid = int(L + (R-L)/2)
+            mid = int((R+L)/2)
             if nums[mid] == target:
                 return mid
-            # elif nums[L] == target:
-            #     return L
-            # elif nums[R] == target:
-            #     return R
             
             if nums[L] <= nums[mid]:
                 if nums[L] <= target and target < nums[mid]:
@@ -44,3 +25,6 @@ class Solution:
         
         # return index of target if it is in nums, or -1 if it is not in nums
         return -1
+    
+    # time complexity: O(log n)
+    # space complexity: O(1)
