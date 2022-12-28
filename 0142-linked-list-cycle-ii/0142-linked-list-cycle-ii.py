@@ -18,21 +18,13 @@ class Solution:
             slow = slow.next
             if fast == slow:
                 cycle_found = True
-                # find length of cycle
-                cycle_length = 1
-                fast = fast.next
-                while fast != slow:
-                    fast = fast.next.next
-                    slow = slow.next
-                    cycle_length += 1
                 break
         
         # if cycle found return node where the cycle begins
         if cycle_found:
+            # perform Floyd's alg
             pointer_1 = head
-            pointer_2 = head
-            for i in range(cycle_length):
-                pointer_2 = pointer_2.next
+            pointer_2 = fast
             while pointer_1 != pointer_2:
                 pointer_1 = pointer_1.next
                 pointer_2 = pointer_2.next
