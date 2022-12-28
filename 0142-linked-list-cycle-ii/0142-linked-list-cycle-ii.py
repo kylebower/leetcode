@@ -22,7 +22,6 @@ class Solution:
         
         # if cycle found return node where the cycle begins
         if cycle_found:
-            # perform Floyd's alg
             pointer_1 = head
             pointer_2 = fast
             while pointer_1 != pointer_2:
