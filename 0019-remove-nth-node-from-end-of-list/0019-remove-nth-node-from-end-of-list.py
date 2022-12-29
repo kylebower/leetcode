@@ -11,7 +11,7 @@ class Solution:
         slow = head
         
         # move fast pointer ahead by n steps
-        for i in range(n):
+        for _ in range(n):
             fast = fast.next
         
         if not fast:
