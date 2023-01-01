@@ -11,13 +11,14 @@ class Solution:
             return head
         
         # reverse the list
-        reversed_list = None
-        while head:
-            temp = head.next
-            head.next = reversed_list
-            reversed_list = head
-            head = temp
-            
+        prev = None
+        curr = head
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+                        
         # return result
-        return reversed_list
-        
+        return prev
+    
