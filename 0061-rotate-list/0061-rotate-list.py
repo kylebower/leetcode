@@ -10,30 +10,27 @@ class Solution:
         if not head or not head.next or k == 0:
             return head
         
-        # reduce k by mod length of list
-        n = find_length(head)
-        k = k % n
+        # make circularly linked list and find length of list
+        length_list = 0
+        pre = None
+        cur = head
+        while(cur):
+            pre = cur
+            cur = cur.next
+            length_list += 1
+        cur = head
+        pre.next = cur
         
-        # rotate k times
-        for _ in range(k):
-            head = rotate(head)
+        # reduce k by mod length of list
+        k = k % length_list
+        
+        # find new head
+        for _ in range(length_list-k):
+            pre = cur
+            cur = cur.next
             
-        # return list rotated to the right by k places
-        return head
-
-def rotate(head):
-    pre = head
-    cur = head.next
-    while cur.next:
-        pre = pre.next
-        cur = cur.next
-    pre.next = None
-    cur.next = head
-    return cur
-
-def find_length(head):
-    n = 0
-    while head:
-        head = head.next
-        n += 1
-    return n
+        # remove connection
+        pre.next = None
+        
+        # return new head
+        return cur
