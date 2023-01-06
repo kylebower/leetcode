@@ -1,16 +1,16 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        x_string = str(x)
-        x_length = len(x_string)
         
-        # base case
-        if x_length <= 1:
-            return True
-        
-        # check if x is a palindrome
-        for i in range(x_length):
-            if x_string[i] != x_string[x_length-1-i]:
-                # return false if x is not a palindrome
-                return False
-        # return true if x is a palindrome
-        return True
+        # return false if x is negative
+        if x < 0:
+            return False
+
+        # write reverse of input number        
+        input_number = x
+        reversed_number = 0
+        while x > 0:
+            reversed_number = reversed_number * 10 + x % 10
+            x = x // 10
+            
+        # return true if x is a palindrome, and false otherwise.
+        return reversed_number == input_number
