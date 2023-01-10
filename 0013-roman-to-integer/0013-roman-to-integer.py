@@ -1,49 +1,26 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
         
-        # define integer number
+        # define dict for roman numerals
+        roman_dict = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        
+        # define int to return
         num = 0
         
+        # define length of string s
         n = len(s)
-        i = 0
-        while i < n:
-            c = s[i]
-            if c == "M":
-                num += 1000
-            elif c == "D":
-                num += 500
-            elif c == "C":
-                if i == n-1 or (s[i+1] != "D" and s[i+1] != "M"):
-                    num += 100
-                elif s[i+1] == "D":
-                    num += 400
-                    i += 1
-                elif s[i+1] == "M":
-                    num += 900
-                    i += 1
-            elif c == "L":
-                num += 50
-            elif c == "X":
-                if i == n-1 or (s[i+1] != "L" and s[i+1] != "C"):
-                    num += 10
-                elif s[i+1] == "L":
-                    num += 40
-                    i += 1
-                elif s[i+1] == "C":
-                    num += 90
-                    i += 1
-            elif c == "V":
-                num += 5
-            elif c == "I":
-                if i == n-1 or (s[i+1] != "V" and s[i+1] != "X"):
-                    num += 1
-                elif s[i+1] == "V":
-                    num += 4
-                    i += 1
-                elif s[i+1] == "X":
-                    num += 9
-                    i += 1
-            i += 1
-        return num
-            
         
+        # construct int to return
+        for i in range(n-1):
+            # if next char corresponds to greater roman numeral, then subtract value
+            if roman_dict[s[i+1]] > roman_dict[s[i]]:
+                num -= roman_dict[s[i]]
+            else:
+                # add value
+                num += roman_dict[s[i]]
+        
+        # add final value
+        num += roman_dict[s[n-1]]
+        
+        # return int
+        return num
