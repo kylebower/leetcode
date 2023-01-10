@@ -1,22 +1,16 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        # define longest common prefix
-        common_prefix = {}
         
-        i = 0
-        keep_going = True
-        n0 = len(strs[0])
-        while keep_going:
-            if i == n0:
-                i += 1
-                keep_going = False
-                break
-                
-            si = strs[0][i]
-            for s in strs:
-                if i >= len(s) or si != s[i]:
-                    keep_going = False
-                    break
-            i += 1
-            
-        return strs[0][0:i-1]
+        # find shortest string in strs
+        shortest = min(strs,key=len)
+        
+        # for each char in shortest
+        for i, ch in enumerate(shortest):
+            # for each other string
+            for other in strs:
+                # test for prefix
+                if other[i] != ch:
+                    return shortest[:i]
+        
+        # return entire string shortest if it is a prefix for all other strings
+        return shortest
