@@ -39,3 +39,6 @@ class Solution:
         # return the maximum between the number of positive integers 
         # and the number of negative integers
         return max(pos,neg)
+    
+    # time complexity: O(logn)
+    # space complexity: O(1)
