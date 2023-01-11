@@ -7,7 +7,7 @@ class Solution:
         for i in range(n):
             p = points[i]
             if checkPValid(x,y,p):
-                manhat = math.sqrt((p[0]-x)**2 + (p[1]-y)**2)
+                manhat = abs(p[0]-x) + abs(p[1]-y)
                 if manhat < smallest_so_far:
                     smallest_so_far = manhat
                     result = i
