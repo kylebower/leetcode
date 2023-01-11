@@ -6,7 +6,7 @@ class Solution:
         
         # define pointers
         L = 1
-        R = n+1
+        R = n
         
         # binary search to find first bad version
         while L + 1 < R:
