@@ -27,6 +27,6 @@ def computeArea(p1, p2, p3):
     a = [p1[0]-p2[0], p1[1]-p2[1]]
     b = [p1[0]-p3[0], p1[1]-p3[1]]
     theta = np.arccos(np.dot(a,b)/(np.linalg.norm(a)*np.linalg.norm(b)))
-    area = 1/2 * np.linalg.norm(a) * np.linalg.norm(b) * np.sin(theta)
+    area = 0.5 * np.linalg.norm(a) * np.linalg.norm(b) * np.sin(theta)
     return area
         
