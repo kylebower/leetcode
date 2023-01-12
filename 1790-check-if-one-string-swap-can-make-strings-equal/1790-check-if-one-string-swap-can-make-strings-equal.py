@@ -24,8 +24,7 @@ class Solution:
             return False
         else:
             # make swap
-            t1 = s1[:p1] + s1[p2] + s1[p1+1:p2] + s1[p1] + s1[p2+1:]
             # Return true if both strings are equal after swap
             # Otherwise, return false
-            return t1 == s2
+            return s1[:p1] + s1[p2] + s1[p1+1:p2] + s1[p1] + s1[p2+1:] == s2
         
