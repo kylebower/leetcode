@@ -8,14 +8,8 @@ class Solution:
         dt = {}
         
         for i in range(n):
-            if s[i] in ds:
-                ds[s[i]] = ds[s[i]] + [i]
-            else:
-                ds[s[i]] = [i]
-            if t[i] in dt:
-                dt[t[i]] = dt[t[i]] + [i]
-            else:
-                dt[t[i]] = [i]
+            ds[s[i]] = ds.get(s[i],[]) + [i]
+            dt[t[i]] = dt.get(t[i],[]) + [i]
         
         # return true if s and t are isomorphic, otherwise return false
         return list(ds.values()) == list(dt.values())
