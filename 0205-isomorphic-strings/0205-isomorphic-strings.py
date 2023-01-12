@@ -7,9 +7,10 @@ class Solution:
         ds = {}
         dt = {}
         
-        for i in range(n):
-            ds[s[i]] = ds.get(s[i],[]) + [i]
-            dt[t[i]] = dt.get(t[i],[]) + [i]
+        for i, val in enumerate(s):
+            ds[val] = ds.get(val,[]) + [i]
+        for i, val in enumerate(t):
+            dt[val] = dt.get(val,[]) + [i]
         
         # return true if s and t are isomorphic, otherwise return false
         return list(ds.values()) == list(dt.values())
