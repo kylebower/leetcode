@@ -10,7 +10,8 @@ class Solution:
         
         # binary search to find first bad version
         while L + 1 < R:
-            mid = int((L+R)/2)
+            # L+(R-L)/2 to prevent overflow
+            mid = int(L+(R-L)/2)
             if isBadVersion(mid):
                 R = mid
             else:
