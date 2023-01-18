@@ -1,6 +1,9 @@
 class Solution:
     def isSameAfterReversals(self, num: int) -> bool:
         
+        # one line solution
+        # return num == 0 or num%10 != 0
+        
         # reverse num to get reversed1
         num1 = num
         reversed1 = 0
