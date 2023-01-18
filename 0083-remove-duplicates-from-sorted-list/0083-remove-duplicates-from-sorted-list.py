@@ -9,8 +9,7 @@ class Solution:
         while cur and cur.next:
             while cur.next and cur.val == cur.next.val:
                 cur.next = cur.next.next
-            if cur.next:
-                cur = cur.next
+            cur = cur.next
         
         return head
         
