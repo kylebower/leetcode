@@ -11,14 +11,12 @@ class Solution:
         
         # define pointers
         fast = head
-        slow = head
         dummy = ListNode()
         dummy.next = head
         
         # iterate to find middle of list
         while fast and fast.next:
             fast = fast.next.next
-            slow = slow.next
             dummy = dummy.next
         
         # delete middle node
