@@ -12,7 +12,6 @@ class Solution:
         # define reshaped matrix
         reshaped_mat = [[0]*c]*r
         
-        print(mat[:])
         # populate reshaped matrix
         for i in range(r):
             reshaped_mat[i] = np.array(mat).flatten()[0+i*c:c+i*c]
