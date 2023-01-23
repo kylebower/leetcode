@@ -1,13 +1,12 @@
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
-        sorted_arr = [0]*len(arr)
         arr.sort()
         
         num_bits = [0]*len(arr)
         for i,val in enumerate(arr):
             num_bits[i] = self.nums_one_bits(val)
         
-        sorted_arr = [y for x,y in sorted(zip(num_bits,arr))]
+        sorted_arr = [y for _,y in sorted(zip(num_bits,arr))]
         
         return sorted_arr
     
