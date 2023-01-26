@@ -7,18 +7,8 @@
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         if root is None:
-            return 0
+            return 0        
+        elif root.left and root.right:
+            return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
         else:
-            return self.dfs(root, 0)
-    
-    def dfs(self, root, depth):
-        if root.left is None and root.right is None:
-            return depth+1
-        else:
-            if root.left and root.right:
-                return min(self.dfs(root.left, depth+1), self.dfs(root.right, depth+1))
-            elif root.left:
-                return self.dfs(root.left, depth+1)
-            else:
-                return self.dfs(root.right, depth+1)
-    
+            return max(self.minDepth(root.left), self.minDepth(root.right)) + 1
