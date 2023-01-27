@@ -11,7 +11,7 @@ class Solution:
             return 0
         
         # level order traversal
-        q = [root]        
+        q = [root]
         while q:
             cur = []
             for p in q:
