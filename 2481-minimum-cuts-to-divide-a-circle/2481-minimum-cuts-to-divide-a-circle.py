@@ -3,8 +3,8 @@ class Solution:
         # base case:
         if n == 1:
             return 0
-        if n % 2 == 0:
-            return int(n/2)
-        else:
-            return n
         
+        return n if n%2 else n//2
+        
+    # time complexity: O(1)
+    # space complexity: O(1)
