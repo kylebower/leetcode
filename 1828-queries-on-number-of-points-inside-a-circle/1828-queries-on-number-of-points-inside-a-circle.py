@@ -1,8 +1,6 @@
 class Solution:
     def countPoints(self, points: List[List[int]], queries: List[List[int]]) -> List[int]:
-        nPoints = len(points)
-        nQueries = len(queries)
-        answer = [0]*nQueries
+        answer = [0]*len(queries)
         
         for j, qj in enumerate(queries):
             for pi in points:
