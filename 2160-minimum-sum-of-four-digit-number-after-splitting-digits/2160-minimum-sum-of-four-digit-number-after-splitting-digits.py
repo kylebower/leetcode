@@ -11,5 +11,7 @@ class Solution:
         new2 = 10*num_array[1] + num_array[3]
         
         # Return the minimum possible sum of new1 and new2
-        return new1 + new2
+        return new1 + new2        
         
+    # time complexity: O(1)
+    # space complexity: O(1)
