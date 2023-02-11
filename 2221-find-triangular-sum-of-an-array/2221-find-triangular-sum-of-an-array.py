@@ -4,7 +4,8 @@ class Solution:
         n = len(nums)
         if n == 1:
             return nums[0]
-        new_nums = self.getNextRow(nums)
+        # new_nums = self.getNextRow(nums)
+        new_nums = [(x+y)%10 for x,y in zip(nums[:n-1],nums[1:n])]
         return self.triangularSum(new_nums)
     
     def getNextRow(self, nums):
