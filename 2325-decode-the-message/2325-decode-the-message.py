@@ -4,12 +4,9 @@ class Solution:
         d = {" ": " "}
         i = 0
         for c in key:
-            if c not in d and c != " ":
+            if c not in d:
                 d[c] = chr(97 + i)
                 i += 1
-        
-        # remove duplicates from key
-        key = "".join(list(d.keys()))
         
         # decode message
         plain_text = ""
