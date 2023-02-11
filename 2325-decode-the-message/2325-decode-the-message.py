@@ -1,7 +1,7 @@
 class Solution:
     def decodeMessage(self, key: str, message: str) -> str:
         # create dict
-        d = {}
+        d = {" ": " "}
         i = 0
         for c in key:
             if c not in d and c != " ":
@@ -14,10 +14,7 @@ class Solution:
         # decode message
         plain_text = ""
         for c in message:
-            if c == " ":
-                plain_text += " "
-            else:
-                plain_text += d[c]
+            plain_text += d[c]
         
         # return plain text
         return plain_text
