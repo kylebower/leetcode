@@ -13,5 +13,3 @@ class Solution:
         # return destination city
         return current_location
     
-    # time complexity: O(n)
-    # space complexity: O(n)
