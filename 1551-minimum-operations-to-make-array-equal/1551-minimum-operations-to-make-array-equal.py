@@ -1,9 +1,6 @@
 class Solution:
     def minOperations(self, n: int) -> int:
         
-        res = 0
-        while n > 0:
-            res += n-1
-            n -= 2
-        return res
+        N = n//2
+        return N*(N+1) if n%2==1 else N*N
     
