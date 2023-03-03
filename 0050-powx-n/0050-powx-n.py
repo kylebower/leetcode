@@ -1,3 +1,11 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        return x**n
+        if n < 0:
+            return 1./self.myPow(x,-n)
+        elif n == 0:
+            return 1
+        elif n%2 == 0:
+            return self.myPow( x*x, n/2)
+        else:  # n odd
+            return x*self.myPow( x*x, n//2)
+        
