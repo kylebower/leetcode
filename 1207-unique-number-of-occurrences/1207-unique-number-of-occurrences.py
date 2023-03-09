@@ -14,5 +14,4 @@ class Solution:
                 set_num_occ.add(value)
         
         return True
-        # return len(list(arr_dict.values())) == len(set(arr_dict.values()))
     
