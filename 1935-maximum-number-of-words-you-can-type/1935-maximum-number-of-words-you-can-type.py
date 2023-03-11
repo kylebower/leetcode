@@ -11,7 +11,6 @@ class Solution:
             for c in brokenLetters:
                 if c in d.keys():
                     new_word = False
-                    # continue
             if new_word:
                 res += 1
         
