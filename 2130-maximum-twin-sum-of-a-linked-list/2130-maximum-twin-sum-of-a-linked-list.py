@@ -6,9 +6,6 @@
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
         
-        # flip second half of list
-        head = self.flipSecondHalf(head)
-        
         # find midpoint of list
         slow = head
         fast = head
@@ -16,30 +13,20 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         
+        # flip second half of list
+        flippedSecondHalf = self.flipList(slow)
+        
         # iterate to find max twin sum
         max_twin_sum = 0
-        while slow:
-            twin_sum = head.val + slow.val
+        while flippedSecondHalf:
+            twin_sum = head.val + flippedSecondHalf.val
             if twin_sum > max_twin_sum:
                 max_twin_sum = twin_sum
             head = head.next
-            slow = slow.next
+            flippedSecondHalf = flippedSecondHalf.next
         
         # return max twin sum
         return max_twin_sum
-    
-    def flipSecondHalf(self, head):
-        
-        dummy = ListNode()
-        dummy.next = head
-        slow = dummy
-        fast = dummy
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-        
-        slow.next = self.flipList(slow.next)
-        return dummy.next
     
     def flipList(self, head):
         pre = None
