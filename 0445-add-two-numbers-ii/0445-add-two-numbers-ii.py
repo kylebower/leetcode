@@ -21,24 +21,22 @@ class Solution:
             nodeVal = carry_one
             if l1:
                 nodeVal += l1.val
+                l1 = l1.next
             if l2:
                 nodeVal += l2.val
+                l2 = l2.next
                 
             if nodeVal >= 10:
                 carry_one = 1
                 nodeVal -= 10
             else:
                 carry_one = 0
-                
-            if l1:
-                l1 = l1.next
-            if l2:
-                l2 = l2.next
-            
+                        
             # update answer
             ans.next = ListNode(nodeVal)
             ans = ans.next
         
+        # add leading 1 if needed
         if carry_one:            
             ans.next = ListNode(1)
             ans = ans.next
