@@ -3,7 +3,6 @@ class Solution:
         
         res = []
         for q in queries:
-            print(q)
             res.append(self.match(q, pattern))
         return res
     
