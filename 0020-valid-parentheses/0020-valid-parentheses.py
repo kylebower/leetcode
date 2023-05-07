@@ -7,10 +7,10 @@ class Solution:
             if c in {'(', '{', '['}:
                 stack.append(c)
             else: # c in set(')', '}', ']')
-                if len(stack) > 0:
-                    top = stack[-1]
-                else:
+                if stack == []:
                     return False
+                else:
+                    top = stack[-1]
                 
                 valid = (c == ')' and top == '(') or (c == '}' and top == '{') or (c == ']' and top == '[')
                 if valid:
