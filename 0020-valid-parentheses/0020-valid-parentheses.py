@@ -3,19 +3,16 @@ class Solution:
         # FILO - use stack
         
         stack = []
+        d = {'(': ')', '{':'}', '[':']'}
         for c in s:
-            if c in {'(', '{', '['}:
+            if c in d:
                 stack.append(c)
             else: # c in set(')', '}', ']')
                 if stack == []:
                     return False
-                else:
-                    top = stack[-1]
                 
-                valid = (c == ')' and top == '(') or (c == '}' and top == '{') or (c == ']' and top == '[')
-                if valid:
-                    stack.pop()
-                else:
+                if d[stack.pop()] != c:
                     return False
+                
         return stack == []
     
