@@ -4,7 +4,7 @@ class Solution:
         for n in nums:
             cur = n-self.rev(n)
             d[cur] = d.get(cur,0)+1
-        print(d)
+            
         nicePairs = 0
         for n in list(d.values()):
             if n >= 2:
