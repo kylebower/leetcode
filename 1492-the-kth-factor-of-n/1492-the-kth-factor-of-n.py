@@ -1,13 +1,15 @@
 class Solution:
     def kthFactor(self, n: int, k: int) -> int:
-        num_factors = 0
-        for i in range(1,n+1):
+        f1, f2 = [], []
+        for i in range(1,int(sqrt(n))+1):
             if n%i == 0:
-                num_factors += 1
-            if num_factors == k:
-                return i
-        return -1
+                f1 += [i]
+                f2 += [n//i]
+        if f1[-1] == f2[-1]:
+            f2.pop()
+        f1 += f2[::-1]
+        return -1 if len(f1) < k else f1[k-1]
     
-    # time complexity: O(n)
+    # time complexity: O(sqrt(n))
     # space complexity: O(1)
     
