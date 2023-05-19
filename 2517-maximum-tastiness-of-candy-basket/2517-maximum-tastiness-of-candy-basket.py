@@ -30,3 +30,6 @@ class Solution:
                 cur = p + stepSize
         return count >= k 
         
+    # time complexity: O(nlog(n))
+    # space complexity: O(1)
+    
