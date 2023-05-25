@@ -7,28 +7,26 @@ class Solution:
         # two pointer solution
         # define two pointers
         L = 0
-        R = 0
+        n = len(nums)
+        R = n-1
         
         # base case
-        n = len(nums)
         if n < 2:
             return nums
         
-        # move even to beginning
-        while R < n:
-            # find next odd number
-            while L<n and nums[L]%2 == 0:
+        # use two pointers to move even to beginning
+        while L < R:
+            if nums[L]%2 == 0:
+                # find odd
                 L += 1
-            # find next even number
-            R = L + 1
-            while R<n and nums[R]%2 == 1:
-                R += 1
-            # swap two numbers
-            if R<n:
+            elif nums[R]%2 == 1:
+                # find even
+                R -= 1
+            else:
+                # swap even and odd
                 temp = nums[R]
                 nums[R] = nums[L]
                 nums[L] = temp
-                L += 1
         
         # return sorted array
         return nums
