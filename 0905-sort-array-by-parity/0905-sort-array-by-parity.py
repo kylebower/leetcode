@@ -16,13 +16,15 @@ class Solution:
         
         # move even to beginning
         while R < n:
+            # find next odd number
             while L<n and nums[L]%2 == 0:
                 L += 1
+            # find next even number
             R = L + 1
             while R<n and nums[R]%2 == 1:
                 R += 1
+            # swap two numbers
             if R<n:
-                # swap two numbers
                 temp = nums[R]
                 nums[R] = nums[L]
                 nums[L] = temp
