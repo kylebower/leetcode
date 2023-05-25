@@ -1,26 +1,22 @@
 class Solution:
     def largestInteger(self, num: int) -> int:
-        nums_odd = [int(x) for x in str(num) if int(x)%2==1]
-        nums_even = [int(x) for x in str(num) if int(x)%2==0]
-        nums_odd.sort(key = lambda x: -x)
-        nums_even.sort(key = lambda x: -x)
+        arr = [int(x) for x in str(num)]
         
-        parity = [int(x)%2 for x in str(num)]
-        nums = [int(x) for x in str(num)]
-        
-        res = [0]*len(nums)
-        i = 0   # odd counter
-        j = 0   # even counter
-        k = 0   # counter
-        while k < len(nums):
-            if parity[k]: # odd
-                res[k] = nums_odd[i]
-                i += 1
+        even, odd = [], []
+        for x in arr:
+            if x%2==1:
+                odd.append(x)
             else:
-                res[k] = nums_even[j]
-                j += 1
-            k += 1
+                even.append(x)
+        odd.sort()
+        even.sort()
         
-        res_str = [str(x) for x in res]
-        return int(''.join(res_str))
+        res = 0
+        for x in arr:
+            if x%2==1:
+                res = 10*res + odd.pop()
+            else:
+                res = 10*res + even.pop()
+        
+        return res
     
