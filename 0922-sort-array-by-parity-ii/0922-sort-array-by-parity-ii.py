@@ -1,13 +1,11 @@
 class Solution:
     def sortArrayByParityII(self, nums: List[int]) -> List[int]:
-        # nums.sort(key = lambda x: x%2)
         # define two pointers
         L = 0
         R = 1
-        n = len(nums)
         
         # sort array using two pointers
-        while R < n:
+        while R < len(nums):
             # find number out of place
             if nums[L]%2 == L%2:
                 L += 1
