@@ -14,7 +14,7 @@ class Solution:
         best = 0
         
         # iterate to find maximum sum of like-time coefficient
-        for i, dish in enumerate(satisfaction):
+        for _, dish in enumerate(satisfaction):
             cur += sumSoFar + dish
             sumSoFar += dish
             best = max(cur,best)
