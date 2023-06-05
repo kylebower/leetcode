@@ -1,17 +1,13 @@
-import numpy as np
 class Solution:
     def getKth(self, lo: int, hi: int, k: int) -> int:
-        arr = np.arange(lo, hi+1)
-        arr = sorted(arr, key = lambda x: self.power(x))
-        return arr[k-1]
-    
-    def power(self, x: int) -> int:
-        # return power value of x
-        res = 0
-        while x > 1:
-            if x%2==0:
-                x = x / 2
+        @lru_cache(None)
+        def power(x: int) -> int:
+            # return power value of x
+            if x == 1:
+                return 0
+            elif x%2==0:
+                return 1 + power(x // 2)
             else:
-                x = 3*x + 1
-            res += 1
-        return res
+                return 1 + power(3*x + 1)
+        return sorted(range(lo, hi+1), key = lambda x: power(x))[k-1]
+    
