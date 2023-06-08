@@ -10,6 +10,7 @@ class Solution:
         
         # compute score
         for mi in range(m):
+            # find max in each col and add to score
             cur = 0
             for ni in range(n):
                 cur = max(cur, nums[ni][mi])            
@@ -17,4 +18,7 @@ class Solution:
         
         # Return the final score
         return score
+    
+    # time complexity: O(n*m*log(m))
+    # space complexity: O(1)
     
