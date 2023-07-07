@@ -7,3 +7,7 @@ class Solution:
         
         # return middle of first three numbers
         return sorted(nums[:3])[1]
+    
+    # time complexity: O(1)
+    # space complexity: O(1)
+    
