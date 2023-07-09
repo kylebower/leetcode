@@ -1,12 +1,8 @@
 class Solution:
-    def halvesAreAlike(self, s: str) -> bool:
-        # split string in two
+    def halvesAreAlike(self, s: str) -> bool:        
+        # return true if two halves have the same number of vowels
         n = len(s)
-        a = s[:n//2]
-        b = s[n//2:]
-        
-        # return true if a and b have the same number of vowels
-        return self.numVowel(a) == self.numVowel(b)
+        return self.numVowel(s[:n//2]) == self.numVowel(s[n//2:])
     
     def numVowel(self, s: str) -> int:
         # return number of vowels in string
