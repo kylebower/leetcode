@@ -9,22 +9,14 @@ class Solution:
         # convert time to minutes
         correct_min = 60*hh + mm
         current_min = 60*HH + MM
+        diff = correct_min - current_min
         
         # perform greedy alg to compute minimum number of operations needed to convert current to correct
         res = 0
-        while (correct_min - current_min) % (60*24) >= 60:
-            current_min = (current_min + 60) % (60*24)
-            res += 1
-        while (correct_min - current_min) % (60*24) >= 15:
-            current_min = (current_min + 15) % (60*24)
-            res += 1
-        while (correct_min - current_min) % (60*24) >= 5:
-            current_min = (current_min + 5) % (60*24)
-            res += 1
-        while (correct_min - current_min) % (60*24) >= 1:
-            current_min = (current_min + 1) % (60*24)
-            res += 1
-        
+        for i in [60, 15, 5, 1]:
+            res += diff//i
+            diff %= i
+            
         # return Minimum Number of Operations to Convert Time
         return res
         
