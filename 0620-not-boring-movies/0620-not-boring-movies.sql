@@ -1,14 +1,10 @@
 # Write your MySQL query statement below
-SELECT
-    id,
-    movie,
-    description,
-    rating
+SELECT *
 FROM
-    Cinema
+    Cinema c
 WHERE
-    id % 2 = 1
+    c.id % 2 = 1
     AND
-    description != "boring"
+    c.description != "boring"
 ORDER BY
     rating DESC
