@@ -17,3 +17,5 @@ FROM
     Department
 GROUP BY
     id
+ORDER BY
+    id
