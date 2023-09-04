@@ -6,3 +6,5 @@ SELECT
 FROM
     Sales s INNER JOIN Product AS p
     USING(product_id)
+GROUP BY
+    sale_id
