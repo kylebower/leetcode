@@ -7,4 +7,4 @@ FROM
 GROUP BY
     u.id
 ORDER BY
-    travelled_distance DESC, name ASC
+    travelled_distance DESC, u.name ASC
