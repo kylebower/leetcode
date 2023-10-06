@@ -8,6 +8,6 @@ GROUP BY
 HAVING
     SUM(Q2.weight) <= 1000
 ORDER BY
-    SUM(Q2.weight) DESC
+    Q1.turn DESC
 LIMIT 1
     
