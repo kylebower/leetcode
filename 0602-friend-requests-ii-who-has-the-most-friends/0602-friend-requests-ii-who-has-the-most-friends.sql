@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 SELECT T.id,
-    COUNT(T.id) AS num
+    COUNT(*) AS num
 FROM
 (SELECT
     requester_id  AS id
