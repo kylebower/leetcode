@@ -5,6 +5,6 @@ FROM
     Insurance A
 WHERE
     (SELECT COUNT(*) FROM Insurance B WHERE A.lat = B.lat AND A.lon = B.lon) = 1
-    AND
-    (SELECT COUNT(*) FROM Insurance B WHERE A.tiv_2015 = B.tiv_2015) > 1
+AND
+    (SELECT COUNT(*) FROM Insurance C WHERE A.tiv_2015 = C.tiv_2015) > 1
     
