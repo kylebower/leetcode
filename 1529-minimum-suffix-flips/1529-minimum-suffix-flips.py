@@ -3,9 +3,7 @@ class Solution:
         res = 0
         pre = 0
         for c in target:
-            if int(c) == pre:
-                continue
-            else:
+            if int(c) != pre:
                 pre = int(c)
                 res += 1
         return res
