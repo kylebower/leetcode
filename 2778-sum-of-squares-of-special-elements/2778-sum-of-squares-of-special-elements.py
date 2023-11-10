@@ -4,6 +4,6 @@ class Solution:
         n = len(nums)
         for i, num in enumerate(nums):
             if n % (i+1) == 0:
-                res += num**2
+                res += num*num
         return res
     
