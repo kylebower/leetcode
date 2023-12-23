@@ -1,9 +1,7 @@
 class Solution:
     def lastVisitedIntegers(self, words: List[str]) -> List[int]:
         k = 0
-        nums = []
-        nums_reverse = []
-        
+        nums = []        
         res = []
         
         for i, w in enumerate(words):
