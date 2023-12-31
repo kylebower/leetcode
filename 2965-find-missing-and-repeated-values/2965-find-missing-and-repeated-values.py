@@ -3,16 +3,18 @@ class Solution:
         ans = [0]*2
         n = len(grid)
         
-        counts = {}
+        entries = set()
         for row in grid:
-            for elem in row:
-                counts[elem] = counts.get(elem,0) + 1
+            for entry in row:
+                if entry in entries:
+                    ans[0] = entry
+                else:
+                    entries.add(entry)
                 
         for k in range(1,n**2+1):
-            if k not in counts:
+            if k not in entries:
                 ans[1] = k
-            elif counts[k] == 2:
-                ans[0] = k
+                break
         
         return ans
                 
