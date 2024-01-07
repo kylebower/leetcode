@@ -1,18 +1,11 @@
 class Solution:
     def canBeIncreasing(self, nums: List[int]) -> bool:
+        cnt = 0
         n = len(nums)
-        for i in range(n):
-            cur = nums[:i] + nums[i+1:]
-            if self.isSorted(cur):
-                return True
-        return False
-    
-    def isSorted(self, arr: List[int]) -> bool:
-        # return True if arr is strictly increasing
-        # otherwise return False
-        m = len(arr)
-        for j in range(m-1):
-            if arr[j] >= arr[j+1]:
-                return False
-        return True
+        for i in range(n-1):
+            if nums[i] >= nums[i+1]:
+                cnt += 1
+                if i>0 and nums[i+1] <= nums[i-1]:
+                    nums[i+1] = nums[i]
+        return cnt < 2
     
