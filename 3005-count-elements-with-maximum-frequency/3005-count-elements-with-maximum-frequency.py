@@ -1,13 +1,13 @@
 class Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
-        d = {}
+        d = defaultdict(int)
         for num in nums:
-            d[num] = d.get(num,0) + 1
+            d[num] = d[num] + 1
             
         max_frequency = max(d.values())
         nums_with_max_feq = 0
         
-        for k in list(d.keys()):
+        for k in d:
             if d[k] == max_frequency:
                 nums_with_max_feq += 1
         
