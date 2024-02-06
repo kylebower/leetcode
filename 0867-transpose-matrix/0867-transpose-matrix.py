@@ -12,6 +12,9 @@ class Solution:
             for mi in range(m):
                 result[mi][ni] = matrix[ni][mi]
         
+        # return result
         return result
-        
+    
+    # time complexity: O(nm)
+    # space complexity: O(1)
         
