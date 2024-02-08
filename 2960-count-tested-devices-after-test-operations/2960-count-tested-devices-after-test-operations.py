@@ -3,9 +3,7 @@ class Solution:
         n = len(batteryPercentages)
         tested_devices = 0
         for i,bat in enumerate(batteryPercentages):
-            if batteryPercentages[i] > 0:
+            if batteryPercentages[i] > tested_devices:
                 tested_devices += 1
-                for j in range(i+1,n):
-                    batteryPercentages[j] = max(0, batteryPercentages[j] - 1)
         return tested_devices
                 
