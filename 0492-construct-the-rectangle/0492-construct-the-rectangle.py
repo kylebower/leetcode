@@ -3,19 +3,10 @@ class Solution:
         W = 1
         L = area
         
-        w = W
-        l = L
-        
-        while w <= l:
-            cur = w*l
-            if cur == area:
-                W = w
-                L = l
-                w += 1
-            elif cur > area:
-                l -= 1
-            else:
-                w += 1
+        for k in range(1,int(sqrt(area))+1):
+            if area%k == 0:
+                W = k
+                L = area // k
         
         return [L, W]
     
