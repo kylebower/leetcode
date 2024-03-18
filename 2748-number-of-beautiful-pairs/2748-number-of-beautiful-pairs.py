@@ -18,7 +18,7 @@ class Solution:
     def gcd(self, x: int, y: int) -> int:
         # return greatest common divisor of x and y
         gcd = 1
-        for k in range(1,min(x,y)+1):
+        for k in range(2,min(x,y)+1):
             if (x%k == 0) and (y%k == 0):
                 gcd = k
         return gcd
