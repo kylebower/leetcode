@@ -18,7 +18,6 @@ class Solution:
         k = 0
         while not output and k < n_word - n_sub + 1:
             if sub == word[k:k+n_sub]:
-                print('yes')
                 output = True
             k += 1
         
