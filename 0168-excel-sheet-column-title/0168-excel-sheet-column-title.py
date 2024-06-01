@@ -10,7 +10,7 @@ class Solution:
                 (columnNumber,r) = divmod(columnNumber, 26)
                 if r == 0:
                     columnNumber -= 1
-                    r += 26
+                    r = 26
                 res += chr(ord('A') + r - 1)
         
         return res[::-1]
