@@ -1,11 +1,14 @@
 class Solution:
     def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
         
-        if len(ops) == 0:
+        if ops == []:
             return m * n
         
-        min_x = min(x[0] for x in ops)
-        min_y = min(x[1] for x in ops)            
+        min_x = m
+        min_y = n
+        for a, b in ops:
+            min_x = min(min_x, a)
+            min_y = min(min_y, b)        
             
         return min_x * min_y
     
